@@ -26,3 +26,5 @@ result = selected.sort_values(by="Past", ascending=False)
 
 # Show result
 print(result)
+
+#First day of learning python data analytics
