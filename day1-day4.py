@@ -127,12 +127,29 @@ print(
 # Only Student + Current
 # Sorted lowest first
 
+
+
 import pandas as pd
-df = pd.read_csv("students.csv")
+df = pd.read_csv("Students.csv")
 print(df)
 
 print(
     df[df["Current"] <90][["Student", "Current"]]
     .sort_values(by="Current", ascending=True)
+)
+
+import pandas as pd
+df = pd.read_csv("students.csv")
+
+print(
+    df[(df["Current"] >= 60) & (df["Past"] < 90)][["Student", "Past", "Current"]]
+    .sort_values(by="Past", ascending=False)
     )
 
+import pandas as pd
+df = pd.read_csv("students.csv")
+
+print(
+    df[df["Current"] >60][["Student", "Current"]]
+    .sort_values(by="Current", ascending=True)
+)
