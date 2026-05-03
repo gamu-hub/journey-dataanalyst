@@ -147,4 +147,16 @@ data = {
 df = pd.DataFrame(data)
 print(df.groupby(["Department", "City"]) ["Salary"].sum())
 
+import pandas as pd
+
+data = {
+    "Name": ["A", "B", "C", "D", "E", "F"],
+    "Department" : ["IT", "IT", "HR", "HR", "IT", "HR"],
+    "City": ["Tel Aviv", "Haifa", "Tel Aviv", "Haifa", "Tel Aviv", "Haifa"],
+    "Salary" : [5000, 6000, 4000, 4500, 5500, 4800]
+}
+
+df = pd.DataFrame(data)
+print(df.groupby(["Department", "City"]) ["Salary"].sum())
+
 
