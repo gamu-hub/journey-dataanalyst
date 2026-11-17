@@ -55,18 +55,17 @@
 
 import random
 
-# Dataset path
+# Store the words file location in a variable.
+# This allows us to reuse the path throughout the code
+# without repeatedly writing the full file location.
+
 WORDS_FILE = "Main_Course/Week2/Day4/Exercises/words.txt"
-
-
 # STEP 1: Read words from file
 def get_words_from_file(file_path):
     with open(file_path, "r") as file:
         content = file.read()
         words = content.split()
-
     return words
-
 
 # STEP 2: Generate random sentence
 def get_random_sentence(length):
@@ -77,16 +76,11 @@ def get_random_sentence(length):
     # 2. Create an empty list for selected words
     selected_words = []
 
-
     # 3. Repeat length times
     for i in range(length):
 
-        # Select a random word
-        random.choice(words)
-
         # Pick a random word then add it to our list
         selected_words.append(random.choice(words))
-
 
     # 4. Join all selected words into one sentence
     sentence = " ".join(selected_words)
@@ -97,4 +91,31 @@ def get_random_sentence(length):
     # 6. Return the sentence
     return sentence
 
-print(get_random_sentence(3))
+# STEP 3: Create the main function
+
+def main():
+
+    # 1. Welcome message
+    print("Welcome to the Random Sentence Generator!")
+
+    # 2. Ask for sentence length and convert to integer
+    try:
+        length = int(input("How many words should your sentence contain? "))
+
+    # 3. Handle invalid input
+    except ValueError:
+        print("Please enter a valid number.")
+        exit()
+
+    # 4. Validate the range
+    if length < 2 or length > 20:
+        print("Please enter a number between 2 and 20.")
+        exit()
+
+    # 5. Generate the sentence
+    sentence = get_random_sentence(length)
+
+    # 6. Display the sentence
+    print(sentence)
+
+main()
