@@ -55,11 +55,11 @@
 
 import random
 
-# Store the words file location in a variable.
-# This allows us to reuse the path throughout the code
-# without repeatedly writing the full file location.
-
 WORDS_FILE = "Main_Course/Week2/Day4/Exercises/words.txt"
+"""Store the words file location in a variable.
+This allows us to reuse the path throughout the code
+without repeatedly writing the full file location."""
+
 # STEP 1: Read words from file
 def get_words_from_file(file_path):
     with open(file_path, "r") as file:
