@@ -80,3 +80,75 @@
 # Return the modified text.
 
 
+# Step 1: Create the text class
+
+class Text:
+    def __init__(self, text):
+        self.text = text
+
+    # Step 2: Implement word_frequency Method
+    def word_frequency(self, word):
+        # split self.text into a list of words
+        words = self.text.split()
+        # Count how many times the given word in the list
+        count = words.count(word)
+        if count == 0:
+            return None
+        return count
+
+    # STEP 3: 
+    def most_common_word(self):
+
+        # Split self.text into a list of words
+        words = self.text.split()
+
+        # Create an empty dictionary to store word frequencies
+        word_counts = {}
+
+        for word in words:
+            if word in word_counts:
+                word_counts[word] += 1
+            else:
+                word_counts[word] = 1
+        # Finding the word with highest frequency
+        highest_count = max(word_counts.values())
+
+        for word, count in word_counts.items():
+            if count == highest_count:
+                return word
+
+    # STEP 4: Using method unique_words
+    def unique_words(self):
+        words = self.text.split()
+        unique = set(words)
+        return list(unique)
+
+    # STEP 5: Implementing from_file Class method
+    
+    @classmethod
+    def from_file(cls, file_path):
+        with open(file_path, "r") as file:
+            content = file.read()
+
+        return cls(content)
+
+    
+# Test Step 2
+my_text = Text("HOPE wins HOPE")
+print(my_text.word_frequency("HOPE"))  # Expected: 2
+print(my_text.word_frequency("PUBG"))  # Expected: None
+
+# Test Step 3
+my_text = Text("HOPE wins HOPE tournaments HOPE")
+print(my_text.most_common_word())  # Expected: HOPE
+
+# Test Step 4
+my_text = Text("HOPE wins HOPE tournaments wins")
+print(my_text.unique_words())  # Three unique words, order may vary
+
+# Test Step 5
+my_text = Text.from_file(
+    r"D:\journey-dataanalyst\Main_Course\Week2\Day4\Exercises\Exercises_one\words.txt"
+)
+print(my_text.text)
+print(type(my_text))  # Expected: <class '__main__.Text'>
