@@ -23,16 +23,19 @@ def get_user_menu_choice():
             print("Invalid choice. Please try again.")
 
 
-# Step 7: Display the game results
+# Step 7: Display the final results
 def print_results(results):
+    """Display the final scores and thank the user."""
 
-    # Display the final score summary
     print("\n===== FINAL GAME SUMMARY =====")
-    print("Wins:", results["win"])
-    print("Losses:", results["loss"])
-    print("Draws:", results["draw"])
 
-    # Thank the user for playing
+    # Display all scores on one line
+    print(
+        f"Wins: {results['win']}, "
+        f"Losses: {results['loss']}, "
+        f"Draws: {results['draw']}"
+    )
+
     print("\nThank you for playing!")
 
 

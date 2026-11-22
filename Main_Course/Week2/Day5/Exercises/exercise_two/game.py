@@ -62,7 +62,7 @@ class Game:
 
         # Display the choices and result
         print("Your choice:", user_item)
-        print("Computer's:", computer_item)
+        print("Computer's choice:", computer_item)
         print("Result:", result)
 
         # Return the result
