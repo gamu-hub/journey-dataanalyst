@@ -13,7 +13,7 @@ class Deck:
         # Attribute to store all the cards
         self.cards = []
 
-    #STEP 3: Create the suits and and values
+    #STEP 3: Create the suits and values
     def shuffle(self):
         suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
         values = ["A", "2","3", "4", "5", "6", "7", "8",
